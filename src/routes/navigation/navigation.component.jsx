@@ -7,6 +7,8 @@ import './navigation.styles.scss';
 
 const Navigation = () => {
   return (
+    // Fragment Renders nothing, to bypass the rule where each component needs to have a single
+    // parent div
     <Fragment>
       <div className='navigation'>
         <Link className='logo-container' to='/'>

@@ -34,10 +34,12 @@ export const createUserDocumentFromAuth = async (userAuth) => {
 
   const userSnapshot = await getDoc(userDocRef);
 
+  // If the user instance does not exist
   if (!userSnapshot.exists()) {
     const { displayName, email } = userAuth;
     const createdAt = new Date();
 
+    // Set user instance in DB
     try {
       await setDoc(userDocRef, {
         displayName,
